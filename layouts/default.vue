@@ -7,6 +7,8 @@
             <CommonHeader />
         </header>
 
+        <CommonBreadcrumbs />
+
         <div class="flex test">
             <aside class="test">
                 <CommonSideNavigation />
