@@ -2,22 +2,22 @@
 
 </script>
 <template>
-    <div class="">
-        <header class="">
+    <div class="test">
+        <header class="test">
             <CommonHeader />
         </header>
 
-        <div class="flex">
-            <aside class="">
+        <div class="flex test">
+            <aside class="test">
                 <CommonSideNavigation />
             </aside>
 
-            <main class="">
+            <main class="test">
                 <slot></slot>
             </main>
         </div>
 
-        <footer class="">
+        <footer class="test">
             <CommonFooter />
         </footer>
     </div>
