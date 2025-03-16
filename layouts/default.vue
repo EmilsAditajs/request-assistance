@@ -3,13 +3,13 @@
 </script>
 <template>
     <div class="test">
-        <header class="">
+        <header>
             <CommonHeader />
         </header>
 
         <CommonBreadcrumbs />
 
-        <div class="flex test">
+        <div class="container mx-auto test">
             <aside class="test">
                 <CommonSideNavigation />
             </aside>

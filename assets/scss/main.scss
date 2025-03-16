@@ -1,5 +1,5 @@
-@import 'variables';
-@import '@fontsource/roboto';
+@use 'variables';
+@use '@fontsource/roboto';
 
 .test {
     border: 1px solid var(--color-red);
