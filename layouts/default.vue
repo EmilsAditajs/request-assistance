@@ -3,7 +3,7 @@
 </script>
 <template>
     <div class="test">
-        <header class="test">
+        <header class="">
             <CommonHeader />
         </header>
 

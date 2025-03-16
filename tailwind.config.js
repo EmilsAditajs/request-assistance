@@ -7,6 +7,12 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ['var(--font-default)']
+      },
+      fontSize: {
+        xs: ['0.75rem', '0.875rem'],
+      },
       colors: {
         'red': 'var(--color-red)',
         'brand-blue': 'var(--color-brand-blue)',

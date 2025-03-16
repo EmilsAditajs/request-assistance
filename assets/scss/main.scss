@@ -1,5 +1,14 @@
 @import 'variables';
+@import '@fontsource/roboto';
 
 .test {
     border: 1px solid var(--color-red);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }

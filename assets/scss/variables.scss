@@ -1,5 +1,7 @@
 // Use css variables so they can be used in tailwind.config.js
 :root {
+  --font-default: "Roboto", sans-serif;
+
   --color-red: #ff0000;
   --color-brand-blue: #152649;
   --color-brand-blue-ui: #313892;

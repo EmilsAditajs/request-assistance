@@ -33,7 +33,7 @@ const breadcrumbs = computed<Breadcrumb[]>(() => {
             {{ crumb.label }}
           </span>
   
-          <img v-if="index < breadcrumbs.length - 1" src="/breadcrumb-separator.svg" alt="separator" class="inline-block" />
+          <img v-if="index < breadcrumbs.length - 1" src="/icons/breadcrumb-separator.svg" alt="separator" class="inline-block" />
         </li>
       </ol>
     </nav>
