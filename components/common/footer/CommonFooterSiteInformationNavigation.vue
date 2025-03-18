@@ -7,14 +7,15 @@
   });
 </script>
 <template>
-  <nav aria-label="Site information">
-    <ul class="flex flex-col lg:flex-row lg:gap-12">
-      <BaseNavigationItem
-        v-for="(item, index) in siteInformationLinks"
-        :key="index"
-        :link="item.link"
-        :label="item.label"
-        class="text-xs leading-9 font-normal text-text-footer-title" />
-    </ul>
+  <nav
+    aria-label="Site information"
+    class="flex flex-col lg:flex-row lg:gap-12">
+    <NuxtLink
+      v-for="(item, index) in siteInformationLinks"
+      :key="index"
+      :to="item.link"
+      class="text-xs leading-9 font-normal text-text-footer-title">
+      {{ item.label }}
+    </NuxtLink>
   </nav>
 </template>

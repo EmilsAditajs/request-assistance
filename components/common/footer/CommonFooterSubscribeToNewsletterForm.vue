@@ -21,7 +21,7 @@
   };
 </script>
 <template>
-  <div class="grow relative pt-2 lg:pt-0 lg:pl-5">
+  <div class="grow relative pb-7 lg:pb-0 pt-2 lg:pt-0 lg:pl-5">
     <CommonFooterHeading
       heading="Subscribe to newsletter"
       class="pb-1.5" />

@@ -34,7 +34,7 @@
 </script>
 
 <template>
-  <div class="border-b border-sidebar-divider hidden lg:block">
+  <div class="lg:border-b border-sidebar-divider hidden lg:block">
     <nav
       aria-label="Breadcrumb"
       class="container mx-auto px-5 lg:px-0">
@@ -73,7 +73,7 @@
 
   <div
     v-if="mobileBreadcrumb"
-    class="border-b border-sidebar-divider lg:hidden">
+    class="border-sidebar-divider lg:hidden">
     <nav
       aria-label="Mobile breadcrumb"
       class="container mx-auto px-5">

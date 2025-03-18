@@ -7,14 +7,15 @@
   });
 </script>
 <template>
-  <nav aria-label="Mobile navigation">
-    <ul class="flex flex-col gap-4 list-none px-5 items-center">
-      <BaseNavigationItem
-        v-for="(link, index) in links"
-        :key="index"
-        :label="link.label"
-        :link="link.link"
-        class="font-normal text-header-text" />
-    </ul>
+  <nav
+    aria-label="Mobile navigation"
+    class="flex flex-col gap-4 list-none px-5 items-center">
+    <NuxtLink
+      v-for="(link, index) in links"
+      :key="index"
+      :to="link.link"
+      class="font-normal text-header-text"
+      >{{ link.label }}</NuxtLink
+    >
   </nav>
 </template>

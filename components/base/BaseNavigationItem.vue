@@ -6,14 +6,12 @@
 </script>
 
 <template>
-  <li class="flex items-center gap-2">
     <NuxtLink
       :to="link"
       :aria-label="`Navigate to ${label}`"
-      class="flex gap-2 items-center">
+      class="flex gap-2 items-center justify-right">
       <slot name="icon" />
       <span>{{ label }}</span>
       <slot name="extra" />
     </NuxtLink>
-  </li>
 </template>

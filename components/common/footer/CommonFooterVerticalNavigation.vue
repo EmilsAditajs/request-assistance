@@ -36,24 +36,23 @@
 
     <!-- Navigation Links -->
     <div
-      class="lg:block"
-      :class="!isNavOpen ? 'hidden' : 'block'">
-      <ul>
-        <BaseNavigationItem
-          v-for="(item, index) in navigationData.links"
-          :key="index"
-          :link="item.link"
-          :label="item.label"
-          class="font-normal leading-9">
-          <template #extra>
-            <img
-              v-if="item.isExternal"
-              src="/icons/redirect.svg"
-              alt="Redirect icon"
-              class="mb-3 h-2 w-2" />
-          </template>
-        </BaseNavigationItem>
-      </ul>
+      class="lg:flex flex-col w-full"
+      :class="!isNavOpen ? 'hidden' : 'flex'">
+      <NuxtLink
+        v-for="(item, index) in navigationData.links"
+        :key="index"
+        :to="item.link"
+        :label="item.label"
+        class="font-normal leading-9">
+        <span class="flex"
+          >{{ item.label }}
+          <img
+            v-if="item.isExternal"
+            src="/icons/redirect.svg"
+            alt="Redirect icon"
+            class="ml-2 mt-2 h-2 w-2"
+        /></span>
+      </NuxtLink>
     </div>
   </nav>
 </template>
