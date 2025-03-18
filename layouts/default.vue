@@ -1,26 +1,30 @@
 <script setup lang="ts">
+  import { useRoute } from "vue-router";
 
+  const route = useRoute();
 </script>
 <template>
-    <div class="test">
-        <header>
-            <CommonHeader />
-        </header>
+  <div>
+    <header>
+      <CommonHeader />
+    </header>
 
-        <CommonBreadcrumbs />
+    <CommonBreadcrumbs v-if="route.path !== '/'" />
 
-        <div class="container mx-auto test">
-            <aside class="test">
-                <CommonSideNavigation />
-            </aside>
+    <div class="container mx-auto px-5 lg:p-0">
+      <div class="grid grid-cols-3">
+        <aside class="hidden lg:block lg:col-span-1">
+          <CommonSideNavigation />
+        </aside>
 
-            <main class="test">
-                <slot></slot>
-            </main>
-        </div>
-
-        <footer class="test">
-            <CommonFooter />
-        </footer>
+        <main class="col-span-3 lg:col-span-2">
+          <slot></slot>
+        </main>
+      </div>
     </div>
+
+    <footer>
+      <CommonFooter />
+    </footer>
+  </div>
 </template>

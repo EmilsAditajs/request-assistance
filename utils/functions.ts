@@ -1,9 +1,9 @@
 /**
- * Helper function to format labels:
+ * Helper function to format breadcrumb labels:
  * - Replace "-" with spaces
- * - Capitalize first word
+ * - Capitalize each word
  */
-export const formatLabel = (text: string): string => {
+export function formatLabel(text: string): string {
   const formattedText = text.replace(/-/g, " ");
   return formattedText.charAt(0).toUpperCase() + formattedText.slice(1);
 };
