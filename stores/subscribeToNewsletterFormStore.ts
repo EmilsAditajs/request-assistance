@@ -1,13 +1,13 @@
 import { defineStore } from "pinia";
 
 export const useSubscribeToNewsletterStore = defineStore("subscribeToNewsletter", () => {
-  const subscribeToNewsletterFormData = ref<SubscriptionFormData>({
+  const subscribeToNewsletterFormData = ref<SubscribeToNewsletterFormData>({
     email: "",
   });
 
-  function setSsubscribeToNewsletterFormData(data: SubscriptionFormData): void {
+  function setSubscribeToNewsletterFormData(data: SubscribeToNewsletterFormData): void {
     subscribeToNewsletterFormData.value = data;
   }
 
-  return { subscribeToNewsletterFormData, setSsubscribeToNewsletterFormData };
+  return { subscribeToNewsletterFormData, setSubscribeToNewsletterFormData };
 });

@@ -1,25 +1,27 @@
 <script setup lang="ts">
+  import { ref } from "vue";
   import { useFormValidation } from "~/composables/useFormValidation";
   import { useSubscribeToNewsletterStore } from "~/stores/subscribeToNewsletterFormStore";
 
   const subscriptionStore = useSubscribeToNewsletterStore();
-  const subscriptionFormData = ref<SubscriptionFormData>({
+  const subscriptionFormData = ref<SubscribeToNewsletterFormData>({
     email: "",
   });
   const statusMessage = ref<string>("");
 
   const { validate: validateSubscriptionForm, errors: subscriptionErrors } = useFormValidation(subscriptionFormSchema);
 
-  const handleSubmit = async () => {
-    const validation = validateSubscriptionForm(subscriptionFormData.value);
-    if (validation.isValid) {
-      subscriptionStore.setSsubscribeToNewsletterFormData(subscriptionFormData.value);
+  const handleSubmit = () => {
+    const { isValid } = validateSubscriptionForm(subscriptionFormData.value);
+    if (isValid) {
+      subscriptionStore.setSubscribeToNewsletterFormData(subscriptionFormData.value);
       statusMessage.value = "Subscription successful!";
     } else {
       statusMessage.value = "";
     }
   };
 </script>
+
 <template>
   <div class="grow relative pb-7 lg:pb-0 pt-2 lg:pt-0 lg:pl-5">
     <CommonFooterHeading
@@ -29,8 +31,7 @@
     <form
       @submit.prevent="handleSubmit"
       novalidate
-      role="form"
-      aria-labelledby="subscribe-form-heading">
+      role="form">
       <div class="relative">
         <div class="flex items-center w-full">
           <BaseInput
@@ -38,10 +39,7 @@
             v-model="subscriptionFormData.email"
             placeholder="Enter your email"
             inputType="email"
-            class="w-full"
-            :error="subscriptionErrors.length > 0"
-            aria-invalid="subscriptionErrors.length > 0 ? 'true' : 'false'"
-            aria-describedby="emailErrorMessage" />
+            class="w-full" />
 
           <button
             type="submit"
@@ -55,14 +53,13 @@
       </div>
 
       <BaseErrorDisplay
-        :error="subscriptionErrors[0]"
-        id="emailErrorMessage"
-        aria-live="assertive" />
+        v-if="subscriptionErrors.email"
+        :error="subscriptionErrors.email[0]"
+        id="emailErrorMessage" />
 
       <BaseSuccessDisplay
         v-if="statusMessage"
-        :message="statusMessage"
-        aria-live="assertive" />
+        :message="statusMessage" />
     </form>
   </div>
 </template>

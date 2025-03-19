@@ -10,7 +10,6 @@
 
   const toggleNav = () => {
     isNavOpen.value = !isNavOpen.value;
-    console.log(isNavOpen.value);
   };
 </script>
 
@@ -18,7 +17,6 @@
   <nav
     class="flex flex-col text-sm text-text-footer-title border-b border-form-border lg:border-none"
     :aria-label="`${navigationData.label} links`">
-    <!-- Toggle Button -->
     <div class="leading-8 font-semibold py-2 lg:py-0">
       <button
         @click="toggleNav"
@@ -34,7 +32,6 @@
       </div>
     </div>
 
-    <!-- Navigation Links -->
     <div
       class="lg:flex flex-col w-full"
       :class="!isNavOpen ? 'hidden' : 'flex'">
@@ -44,7 +41,7 @@
         :to="item.link"
         :label="item.label"
         class="font-normal leading-9">
-        <span class="flex"
+        <span class="flex text-text-footer-title"
           >{{ item.label }}
           <img
             v-if="item.isExternal"

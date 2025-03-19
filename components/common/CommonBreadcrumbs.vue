@@ -42,20 +42,20 @@
         <li
           v-for="(crumb, index) in breadcrumbs"
           :key="index"
-          class="flex items-center text-xs lg:text-sm lg:leading-4 text-brand-blue-ui lg:text-text-light font-medium lg:font-normal">
+          class="flex items-center text-xs lg:text-sm lg:leading-4 lg:text-text-light font-medium lg:font-normal">
           <NuxtLink
             v-if="crumb.link && index < breadcrumbs.length - 1"
             :to="crumb.link"
             class="py-4"
             :aria-label="`Navigate to ${crumb.label}`">
-            <span class="lg:border-b lg:border-brand-green">
+            <span class="lg:border-b lg:border-brand-green text-text-light">
               {{ crumb.label }}
             </span>
           </NuxtLink>
 
           <span
             v-else
-            class="py-4"
+            class="py-4 text-text-light"
             aria-current="page">
             {{ crumb.label }}
           </span>

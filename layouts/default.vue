@@ -11,7 +11,7 @@
 
     <CommonBreadcrumbs v-if="route.path !== '/'" />
 
-    <div class="container mx-auto px-5 pt-2 pb-4 lg:px-0 lg:pt-12 lg:pb-16">
+    <div class="container mx-auto pt-2 pb-4 lg:pt-12 lg:pb-16">
       <div class="grid grid-cols-3 gap-14">
         <aside class="hidden lg:block lg:col-span-1">
           <CommonSideNavigation />

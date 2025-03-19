@@ -7,7 +7,6 @@
   <div class="border-b border-sidebar-divider">
     <div class="container mx-auto">
       <div class="flex justify-between">
-        <!-- Toggle mobile menu button -->
         <button
           class="lg:hidden flex items-center justify-between p-5"
           @click="isMobileMenuOpen = !isMobileMenuOpen"
@@ -18,7 +17,6 @@
             class="w-5" />
         </button>
 
-        <!-- airBaltic logo -->
         <NuxtLink
           aria-label="Homepage"
           to="/">
@@ -30,7 +28,6 @@
           </div>
         </NuxtLink>
 
-        <!-- Actions & Main navigation -->
         <div class="py-6 hidden lg:flex flex-col justify-between">
           <CommonHeaderActions :action-list="headerActions" />
 
@@ -38,7 +35,6 @@
         </div>
       </div>
 
-      <!-- Mobile navigation -->
       <div
         v-if="isMobileMenuOpen"
         class="lg:hidden bg-white py-4">

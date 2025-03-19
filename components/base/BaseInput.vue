@@ -1,17 +1,33 @@
 <script setup lang="ts">
-  const props = defineProps<{
-    id: string;
-    placeholder?: string;
-    inputType: string;
-    label?: string;
-  }>();
+  const props = defineProps({
+    id: {
+      type: String,
+      required: true,
+    },
+    placeholder: {
+      type: String,
+      required: false,
+    },
+    inputType: {
+      type: String,
+      required: true,
+    },
+    label: {
+      type: String,
+      required: false,
+    },
+  });
 
   const modelValue = defineModel<string | number>();
 </script>
 
 <template>
-  <div class="input">
-    <label :for="id">{{ label }}</label>
+  <div>
+    <label
+      :for="id"
+      class="text-xs mb-2"
+      >{{ label }}</label
+    >
     <input
       :id="id"
       :type="inputType"

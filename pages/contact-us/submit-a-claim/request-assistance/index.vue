@@ -1,8 +1,12 @@
-<script setup lang="ts">
-
-</script>
+<script setup lang="ts"></script>
 <template>
-    <div>
-        Test request-assistance page
-    </div>
+  <div>
+    <RequestAssistancePageTitleAndDescriptionSection />
+
+    <RequestAssistancePageWeCanHelpYouSection />
+
+    <RequestAssistancePageAlertCardsSection />
+
+    <RequestAssistancePageForm />
+  </div>
 </template>

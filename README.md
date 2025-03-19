@@ -1,75 +1,22 @@
-# Nuxt Minimal Starter
+# Request Assistance Page
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
-
-## Setup
-
-Make sure to install dependencies:
-
-```bash
-# npm
+## Setup Instructions
+To get started, simply run the following commands:
+```
 npm install
-
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
-```
-
-## Development Server
-
-Start the development server on `http://localhost:3000`:
-
-```bash
-# npm
 npm run dev
-
-# pnpm
-pnpm dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
 ```
+This will install dependencies and start the development server.
 
-## Production
+## Page Location
+The **Request Assistance** page is located at the following path:  
+`/contact-us/submit-a-claim/request-assistance`
 
-Build the application for production:
+## Breadcrumb Navigation
+To ensure proper breadcrumb navigation, the path follows this structure:  
+**Home > Contact Us > Submit a Claim > Request Assistance**  
 
-```bash
-# npm
-npm run build
+## Side Navigation  
+The side navigation is fully functional, and you can access the **Request Assistance** page through the side navigation menu under:  
+**Contact Us > Submit a Claim > Request Assistance**  
 
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.

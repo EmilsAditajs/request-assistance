@@ -14,7 +14,7 @@
       v-for="(link, index) in sideNavigationLinks"
       :key="index"
       :to="link.link"
-      class="text-brand-blue text-xs font-medium pl-6 py-3"
+      class="text-xs font-medium pl-6 py-3"
       :class="isActiveLink(link.link) ? '!border-l-2 !border-l-brand-green text-brand-green-hover' : ''"
       >{{ link.label }}</NuxtLink
     >

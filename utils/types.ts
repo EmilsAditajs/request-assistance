@@ -39,11 +39,35 @@ export type Badge = {
   altText: string;
 };
 
+export type ValidationErrors = Record<string, string[]>;
+
 export type ValidationResult = {
   isValid: boolean;
-  errors: string[];
+  errors: ValidationErrors;
 };
-
-export type SubscriptionFormData = {
+export type SubscribeToNewsletterFormData = {
   email: string;
+}
+
+export type FlightData = {
+  flightNumber: string;
+  flightDate: string;
+}
+
+export type RequestAssistanceFormData = {
+  name: string;
+  email: string;
+  countryCode: string;
+  phoneNumber: string;
+  flights: FlightData[];
+}
+
+export type DropdownOption = {
+  label?: string;
+  value: string;
+}
+
+export type SectionTitleAndDescription = {
+  title?: string;
+  description?: string;
 }
