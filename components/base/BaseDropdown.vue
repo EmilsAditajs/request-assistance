@@ -58,6 +58,7 @@
     ref="dropdownRef">
     <span class="text-xs mb-2">{{ label }}</span>
     <button
+      type="button"
       class="pl-3 pr-6 py-3 bg-white border border-form-border flex gap-5 items-center"
       @click="toggleDropdown">
       <span
