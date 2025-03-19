@@ -3,14 +3,15 @@
 </script>
 
 <template>
-  <section class="mb-12 lg:mb-8">
-    <div class="grid grid-cols-2 lg:gap-5">
-      <article class="alert-card col-span-2 lg:col-span-1 bg-alert-info">
-        <p>{{ alertInfo }}</p>
-      </article>
-      <article class="alert-card col-span-2 lg:col-span-1 bg-alert-warning">
-        <p>{{ alertWarning }}</p>
-      </article>
-    </div>
+  <section class="mb-6 px-5 lg:px-0">
+    <h2 class="mb-3 lg:mb-4">We can help you:</h2>
+    <ul class="list grid grid-rows-5 lg:grid-rows-3 lg:grid-cols-2 grid-flow-col">
+      <li
+        class="list-item"
+        v-for="(item, index) in weCanHelpYouListItems"
+        :key="index">
+        <span>{{ item }}</span>
+      </li>
+    </ul>
   </section>
 </template>
