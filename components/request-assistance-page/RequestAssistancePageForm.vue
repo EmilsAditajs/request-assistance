@@ -4,8 +4,10 @@
   import { countryCodes, disclaimer, privacyPolicyLink } from "~/data/requestAssistancePageData";
 
   const defaultCountryCode = countryCodes[0].value;
+  const statusMessage = ref<string>("");
   const requestAssistanceFormStore = useRequestAssistanceFormStore();
-  const requestAssistanceFormInputData = ref<RequestAssistanceFormData>({
+  const { requestAssistanceFormData } = storeToRefs(requestAssistanceFormStore);
+  const getInitialFormData = (): RequestAssistanceFormData => ({
     name: "",
     email: "",
     countryCode: defaultCountryCode,
@@ -17,17 +19,18 @@
       },
     ],
   });
-
-  const { requestAssistanceFormData } = storeToRefs(requestAssistanceFormStore);
-
-  const statusMessage = ref<string>("");
+  const requestAssistanceFormInputData = ref<RequestAssistanceFormData>(getInitialFormData());
 
   const { validate: validateRequestAssistanceForm, errors: requestAssistanceErrors } = useFormValidation(requestAssistanceFormSchema);
 
   const handleSubmit = () => {
     const { isValid } = validateRequestAssistanceForm(requestAssistanceFormInputData.value);
+
     if (isValid) {
       requestAssistanceFormStore.setRequestAssistanceFormData(requestAssistanceFormInputData.value);
+
+      requestAssistanceFormInputData.value = getInitialFormData();
+
       statusMessage.value = "Assistance request successful!";
     } else {
       statusMessage.value = "";
@@ -37,6 +40,7 @@
 
 <template>
   <section class="bg-sidebar-background">
+    {{ requestAssistanceFormInputData }}
     <form
       @submit.prevent="handleSubmit"
       novalidate
@@ -48,7 +52,8 @@
 
       <RequestAssistancePageFlightDetailsForm
         :formData="requestAssistanceFormInputData"
-        :errors="requestAssistanceErrors" />
+        :errors="requestAssistanceErrors"
+        @update:formData="requestAssistanceFormInputData = $event" />
 
       <BaseFormSection :description="disclaimer.description">
         <template #link>

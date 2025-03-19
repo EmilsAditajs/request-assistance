@@ -6,13 +6,29 @@
     errors: ValidationErrors;
   }>();
 
-  const addFlight = () => {
-    props.formData.flights.push({ flightNumber: "", flightDate: "" });
+  const isLastSection = ref(true);
+
+  watch(
+    () => props.formData.flights,
+    (newFlights) => {
+      isLastSection.value = newFlights.length <= 1;
+    },
+    { deep: true }
+  );
+
+  const emit = defineEmits<{
+    (event: "update:formData", value: any): void;
+  }>();
+
+  const addFlightSection = () => {
+    const updatedFlights = [...props.formData.flights, { flightNumber: "", flightDate: "" }];
+    emit("update:formData", { ...props.formData, flights: updatedFlights });
   };
 
-  const removeFlight = (index: number) => {
-    if (props.formData.flights.length > 1) {
-      props.formData.flights.splice(index, 1);
+  const removeFlightSection = () => {
+    if (props.formData.flights.length > 0) {
+      const updatedFlights = props.formData.flights.slice(0, -1);
+      emit("update:formData", { ...props.formData, flights: updatedFlights });
     }
   };
 </script>
@@ -27,12 +43,26 @@
       <RequestAssistancePageFormFlightSection
         :isLastSection="index === formData.flights.length - 1"
         :flight="flight"
-        :errors="errors"
-        @remove="removeFlight(index)"
-        @add="addFlight()" />
+        :errors="errors" />
     </div>
     <BaseErrorDisplay
       v-if="errors.flights"
       :error="errors.flights[0]" />
+    <div class="flex gap-3 lg:pt-2 lg:pb-5">
+      <button
+        type="button"
+        @click="addFlightSection"
+        class="button button-outline">
+        Add flight
+      </button>
+
+      <button
+        type="button"
+        @click="removeFlightSection"
+        :disabled="isLastSection"
+        class="button">
+        Delete flight
+      </button>
+    </div>
   </BaseFormSection>
 </template>
