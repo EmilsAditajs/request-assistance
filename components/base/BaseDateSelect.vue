@@ -23,6 +23,14 @@
       modelValue.value = "";
     }
   });
+
+  watch(modelValue, (newValue) => {
+    if (!newValue) {
+      day.value = null;
+      month.value = null;
+      year.value = null;
+    }
+  });
 </script>
 
 <template>
