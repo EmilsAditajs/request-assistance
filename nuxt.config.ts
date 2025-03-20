@@ -11,5 +11,11 @@ export default defineNuxtConfig({
     families: {
       Roboto: [300, 400, 500, 700]
     }
-  }
+  },
+  components: [
+    {
+      path: '~/components',
+      pathPrefix: false,
+    },
+  ],
 });

@@ -40,7 +40,6 @@
 
 <template>
   <section class="bg-sidebar-background">
-    {{ requestAssistanceFormInputData }}
     <form
       @submit.prevent="handleSubmit"
       novalidate
